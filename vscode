@@ -1,0 +1,21 @@
+# VSCode problem - terminal error with conda
+
+Opening User Preferences (JSON)
+
+Keyboard Shortcut: Ctrl + Shift + P: This opens the Command Palette in Visual Studio Code. The Command Palette allows you to access various commands and settings in VS Code quickly.
+Once the Command Palette is open, you can type in commands. In this case, typing Preferences: Open User Settings (JSON) opens the user settings as a JSON file. This allows you to edit the settings directly in the JSON format, which provides more control and flexibility than the standard settings interface.
+terminal.integrated.inheritEnv Setting
+In the settings file (either the standard interface or the JSON version), the setting "terminal.integrated.inheritEnv": true can be added.
+What this setting does:
+It ensures that the integrated terminal in VS Code inherits the environment variables of the shell or system from which VS Code was launched.
+If disabled (false), the terminal won't inherit any system environment variables, which can cause issues when trying to run commands that rely on specific environment settings.
+By enabling this setting, it resolves issues where the terminal may not recognize certain paths, environment variables, or dependencies needed for development.
+
+
+
+crtl + shift + p    
+preferences: open user preferences (json)
+
+I resolved that issue by enabling terminal.integrated.inheritEnv in VScode setting.
+
+"terminal.integrated.inheritEnv": true
